@@ -1,0 +1,16 @@
+﻿@using System.Linq
+@using System.Web
+@using Helpfulcore.CacheKeyProfiling
+<!-- Sitecore context: -->
+<!-- Site name: @Sitecore.Context.Site.Name -->
+<!-- Database: @Sitecore.Context.Database.Name -->
+<!-- Language: @Sitecore.Context.Language.Name -->
+<!-- Cache Key list: -->
+@if (!CacheKeyCollection.CurrentRequest.CacheKeys.Any())
+{
+	<!-- No cache keys were gathered for this page. -->
+}
+@foreach (var key in CacheKeyCollection.CurrentRequest.CacheKeys)
+{
+	<!-- @(HttpUtility.HtmlDecode(key))  -->
+}
